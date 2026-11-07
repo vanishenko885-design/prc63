@@ -70,6 +70,10 @@ summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin-top:8px}
 @keyframes sq{50%{transform:scaleY(.88)}}
 .logo{filter:drop-shadow(0 0 8px rgba(168,85,247,.6))}
 @media(prefers-reduced-motion:reduce){.lt::after,.sp{animation:none}}
+.st{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:0}
+.st .c{text-align:center}
+.st .n{font-size:46px;font-weight:800;color:var(--gold);line-height:1.1}
+.st p{margin-top:4px}
 footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:var(--mu);font-size:14px}
 @media(max-width:560px){nav{display:none}}
 </style>
@@ -85,6 +89,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:v
 <div style="margin:0 0 26px"><svg class="tb" viewBox="-70 -70 140 140" aria-hidden="true"><defs><linearGradient id="tg" x1="0" y1="-1" x2="0" y2="1"><stop offset="0" stop-color="#c084fc"/><stop offset="1" stop-color="#5b21b6"/></linearGradient></defs><circle r="64" fill="#0b0712" stroke="#d4a24c" stroke-width="4"/><circle r="58" fill="none" stroke="#2a1f40" stroke-width="2"/><g class="tr" fill="url(#tg)" stroke="#1b0f33" stroke-width=".8"><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(0)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(30)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(60)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(90)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(120)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(150)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(180)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(210)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(240)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(270)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(300)"/><path d="M0,-15 C15,-27 22,-42 9,-56 C6,-41 1,-29 -5,-17 Z" transform="rotate(330)"/><circle r="15" fill="#120d1c" stroke="#8a2be2" stroke-width="3"/><circle r="5" fill="#d4a24c"/></g></svg></div>
 <div class="btns"><a class="b" href="tel:+79879109726">Позвонить</a><a class="b o" href="https://t.me/PRC_63">Написать в Telegram</a></div>
 </div></div>
+
+<section style="padding:30px 0"><div class="w"><div class="g st"><div class="c"><div class="n"><b data-to="10">10</b>+</div><p>лет опыта</p></div><div class="c"><div class="n"><b data-to="7">7</b></div><p>дней в неделю</p></div><div class="c"><div class="n"><b data-to="12">12</b></div><p>часов работы ежедневно (10:00–22:00)</p></div></div></div></section>
 
 <section id="services"><div class="w">
 <h2>Услуги</h2>
@@ -139,6 +145,8 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e)
 d.querySelectorAll('.c').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})})})();
 (function(){var d=document;var h=d.querySelector('.hero'),L=d.querySelector('.lg');if(h&&L&&!matchMedia('(prefers-reduced-motion:reduce)').matches){h.addEventListener('mousemove',function(e){var r=h.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;L.style.transform='perspective(700px) rotateY('+x*14+'deg) rotateX('+(-y*10)+'deg)'});h.addEventListener('mouseleave',function(){L.style.transform=''})}
 })();
+(function(){var d=document;var bs=d.querySelectorAll('.n b');
+if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);var el=x.target,to=+el.dataset.to,t0=null;function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})},{threshold:.5});bs.forEach(function(b){b.textContent='0';io.observe(b)})}})();
 </script>
 </body>
 </html>
