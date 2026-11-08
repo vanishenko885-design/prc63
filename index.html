@@ -92,6 +92,16 @@ summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin-top:8px}
 .st p{margin-top:4px}
 .gl{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
 @media(max-width:600px){.gl{grid-template-columns:1fr 1fr;gap:10px}.gl img{height:150px}.gl h3{font-size:14px;padding:0 10px;margin-top:10px}.gl p{display:none}.gl .c{padding-bottom:12px}}
+.road{position:relative;height:96px;overflow:hidden;margin-top:30px;background:linear-gradient(180deg,transparent,#0d0817 60%)}
+.road::after{content:"";position:absolute;left:0;right:0;bottom:14px;height:3px;background:repeating-linear-gradient(90deg,#4a3570 0 26px,transparent 26px 52px);animation:rd .8s linear infinite}
+@keyframes rd{to{background-position:-52px 0}}
+.car{position:absolute;left:-170px;bottom:18px;width:150px;animation:drive 10s linear infinite}
+.car svg{display:block;animation:bob .35s ease-in-out infinite alternate}
+@keyframes drive{to{transform:translateX(calc(100vw + 190px))}}
+@keyframes bob{to{transform:translateY(-1px)}}
+.wh{transform-box:fill-box;transform-origin:center;animation:rot .45s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.car{animation:none;left:50%;margin-left:-75px}.car svg,.wh,.road::after{animation:none}}
 footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:var(--mu);font-size:14px}
 
 </style>
@@ -170,6 +180,16 @@ footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:v
 </div></div></section>
 </main>
 
+<div class="road" aria-hidden="true"><div class="car"><svg viewBox="0 0 200 80" aria-hidden="true"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2238"/><stop offset=".5" stop-color="#0f0b17"/><stop offset="1" stop-color="#050308"/></linearGradient></defs>
+<ellipse cx="100" cy="72" rx="86" ry="4" fill="#8a2be2" opacity=".55" style="filter:blur(3px)"/>
+<g stroke="#4a3570" stroke-width="1" stroke-linejoin="round">
+<path d="M8 33h24v3H8z M14 36v6 M26 36v5" fill="#0f0b17"/>
+<path d="M10 56V45l12-4 36-1 20-16h50l24 16 32 4q8 2 8 10v7H10z" fill="url(#cg)"/>
+<path d="M62 40l18-13h20v13z M104 27h22l20 13h-42z" fill="#2b2147"/>
+<path d="M160 43l4-3h8l2 3z" fill="#0a0810"/></g>
+<rect x="10" y="45" width="4" height="4" rx="1" fill="#ef4444"/><path d="M184 45l8 3-8 3z" fill="#fde68a"/>
+<circle cx="50" cy="58" r="16" fill="#08050d"/><circle cx="150" cy="58" r="16" fill="#08050d"/>
+<g transform="translate(50 58)"><circle r="13.5" fill="#050505"/><g class="wh"><circle r="9.5" fill="#e0a63a" stroke="#8a5a12" stroke-width="1"/><g stroke="#6b430a" stroke-width="2.4" stroke-linecap="round"><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(0)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(72)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(144)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(216)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(288)"/></g><circle r="2.6" fill="#1a1205"/></g></g><g transform="translate(150 58)"><circle r="13.5" fill="#050505"/><g class="wh"><circle r="9.5" fill="#e0a63a" stroke="#8a5a12" stroke-width="1"/><g stroke="#6b430a" stroke-width="2.4" stroke-linecap="round"><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(0)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(72)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(144)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(216)"/><line x1="0" y1="0" x2="0" y2="-8" transform="rotate(288)"/></g><circle r="2.6" fill="#1a1205"/></g></g></svg></div></div>
 <footer><div class="w">© PRC63 · Самара</div></footer>
 <a class="fc" href="tel:+79879171095" aria-label="Позвонить">📞</a>
 <script>
